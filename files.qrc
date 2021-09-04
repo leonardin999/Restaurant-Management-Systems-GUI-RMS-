@@ -250,6 +250,13 @@
     <file>icons/16x16/cil-zoom-in.png</file>
     <file>icons/16x16/cil-zoom-out.png</file>
   </qresource>
+  <qresource prefix="images">
+    <file>images/Brown and Yellow Illustrated Pizza Party Invitation.png</file>
+    <file>images/Colorful Burger Icon Restaurant Logo.png</file>
+    <file>images/chef_big.png</file>
+    <file>images/Monday Motivation Instagram Story.png</file>
+    <file>images/Special Healthy Salad Restaurant Menu Instagram Post.png</file>
+  </qresource>
   <qresource prefix="social icons">
     <file>icons/social/facebook.png</file>
     <file>icons/social/gmail.png</file>
@@ -258,6 +265,7 @@
     <file>icons/social/twitter.png</file>
   </qresource>
   <qresource prefix="24x24">
+    <file>images/log-out_2.png</file>
     <file>icons/24x24/cil-check-alt.png</file>
     <file>icons/24x24/cil-chevron-double-up-alt.png</file>
     <file>icons/24x24/cil-menu.png</file>

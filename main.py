@@ -1,12 +1,13 @@
 ################################################################################
 ##
-## BY: WANDERSON M.PIMENTA
-## PROJECT MADE WITH: Qt Designer and PySide2
+## BY: Phung Hung Binh
+## PROJECT MADE WITH: Qt Designer and PyQt5
 ## V: 1.0.0
 ##
 ################################################################################
 
 import sys
+from PyQt5 import uic
 import platform
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
@@ -25,36 +26,9 @@ jumper = 10
 class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
-        self.ui = Ui_MainWindow()
-        self.ui.setupUi(self)
+        self.ui = uic.loadUi('Login.ui',self)
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
-        ## ==> SET VALUES TO DEF progressBarValue
-        def setValue(self, slider, labelPercentage, progressBarName, color):
-
-            # GET SLIDER VALUE
-            value = slider.value()
-
-            # CONVERT VALUE TO INT
-            sliderValue = int(value)
-
-            # HTML TEXT PERCENTAGE
-            htmlText = """<p align="center"><span style=" font-size:50pt;">{VALUE}</span><span style=" font-size:40pt; vertical-align:super;">%</span></p>"""
-            labelPercentage.setText(htmlText.replace("{VALUE}", str(sliderValue)))
-
-            # CALL DEF progressBarValue
-            self.progressBarValue(sliderValue, progressBarName, color)
-
-        ## ==> APPLY VALUES TO PROGREESBAR
-        self.ui.sliderCPU.valueChanged.connect(lambda: setValue(self, self.ui.sliderCPU, self.ui.labelPercentageCPU, self.ui.circularProgressCPU, "rgba(85, 170, 255, 255)"))
-        self.ui.sliderGPU.valueChanged.connect(lambda: setValue(self, self.ui.sliderGPU, self.ui.labelPercentageGPU, self.ui.circularProgressGPU, "rgba(85, 255, 127, 255)"))
-        self.ui.sliderRAM.valueChanged.connect(lambda: setValue(self, self.ui.sliderRAM, self.ui.labelPercentageRAM, self.ui.circularProgressRAM, "rgba(255, 0, 127, 255)"))
-
-        ## ==> DEF START VALUES
-        self.ui.sliderCPU.setValue(25)
-        self.ui.sliderGPU.setValue(65)
-        self.ui.sliderRAM.setValue(45)
-
     ## DEF PROGRESS BAR VALUE
     ########################################################################
     def progressBarValue(self, value, widget, color):
@@ -91,8 +65,7 @@ class MainWindow(QMainWindow):
 class SplashScreen(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
-        self.ui = Ui_SplashScreen()
-        self.ui.setupUi(self)
+        self.ui = uic.loadUi('splash_screen.ui',self)
         ## ==> SET INITIAL PROGRESS BAR TO (0) ZERO
         self.progressBarValue(0)
 
@@ -182,8 +155,6 @@ class SplashScreen(QMainWindow):
 
         # APPLY STYLESHEET WITH NEW VALUES
         self.ui.circularProgress.setStyleSheet(newStylesheet)
-
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

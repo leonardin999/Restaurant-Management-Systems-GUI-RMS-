@@ -1,7 +1,7 @@
 ################################################################################
 ##
-## BY: WANDERSON M.PIMENTA
-## PROJECT MADE WITH: Qt Designer and PySide2
+## BY: Phung Hung Binh
+## PROJECT MADE WITH: Qt Designer and PyQt5
 ## V: 1.0.0
 ##
 ## This project can be used freely for all uses, as long as they maintain the
@@ -17,7 +17,7 @@
 class Style():
 
     style_bt_standard = (
-        
+
     """
     QPushButton {
         background-image: ICON_REPLACE;
