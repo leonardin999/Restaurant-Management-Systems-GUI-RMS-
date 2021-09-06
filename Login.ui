@@ -6,40 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>938</width>
-    <height>629</height>
+    <width>922</width>
+    <height>633</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QFrame" name="frame">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>40</y>
-      <width>521</width>
-      <height>571</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-image:url(:/images/images/Special Healthy Salad Restaurant Menu Instagram Post.png);
-border-top-left-radius: 20px;
-border-bottom-left-radius: 20px;</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-   </widget>
    <widget class="QFrame" name="login_area">
     <property name="geometry">
      <rect>
-      <x>540</x>
-      <y>40</y>
+      <x>530</x>
+      <y>10</y>
       <width>381</width>
       <height>571</height>
      </rect>
@@ -95,7 +74,7 @@ background-color: rgb(214, 214, 214);</string>
       </rect>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="Sign_up">
       <widget class="QLabel" name="label">
@@ -125,7 +104,7 @@ background-color: rgb(214, 214, 214);</string>
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_login">
+      <widget class="QPushButton" name="Sign_Up">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -147,7 +126,8 @@ background-color: rgb(214, 214, 214);</string>
 	background-color: rgb(50, 50, 50);
 	border: 2px solid rgb(60, 60, 60);
 	border-radius: 30px;
-	color: rgb(227, 227, 227);
+	
+	color: rgb(214, 214, 214);
 }
 QPushButton:hover {	
 	background-color: rgb(60, 60, 60);
@@ -163,7 +143,7 @@ QPushButton:pressed {
         <string>Get Stared</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_user">
+      <widget class="QLineEdit" name="fullname_edit">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -244,7 +224,7 @@ QLineEdit:focus {
         <string>FULL NAME</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_user_3">
+      <widget class="QLineEdit" name="email_edit">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -309,7 +289,7 @@ QLineEdit:focus {
         <string>PERSONAL MAIL</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_user_4">
+      <widget class="QLineEdit" name="number_edit">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -374,7 +354,7 @@ QLineEdit:focus {
         <string>PHONE NUMBER</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="Fb_SignUp">
        <property name="geometry">
         <rect>
          <x>150</x>
@@ -390,7 +370,7 @@ QLineEdit:focus {
         <string/>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="GG_SignUp">
        <property name="geometry">
         <rect>
          <x>190</x>
@@ -406,7 +386,7 @@ QLineEdit:focus {
         <string/>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_4">
+      <widget class="QPushButton" name="TW_SignUp">
        <property name="geometry">
         <rect>
          <x>230</x>
@@ -422,7 +402,7 @@ QLineEdit:focus {
         <string/>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_login_2">
+      <widget class="QPushButton" name="Log_In_Page">
        <property name="geometry">
         <rect>
          <x>240</x>
@@ -475,7 +455,7 @@ QPushButton:pressed {
         <string>Already have a Account ?</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_6">
+      <widget class="QPushButton" name="IG_SignUp">
        <property name="geometry">
         <rect>
          <x>270</x>
@@ -533,7 +513,7 @@ QPushButton:pressed {
         <string>PASSWORD</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_user_6">
+      <widget class="QLineEdit" name="Username">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -625,7 +605,7 @@ QLineEdit:focus {
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_user_7">
+      <widget class="QLineEdit" name="password">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -693,7 +673,7 @@ QLineEdit:focus {
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_login_3">
+      <widget class="QPushButton" name="Log_In">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -715,7 +695,8 @@ QLineEdit:focus {
 	background-color: rgb(50, 50, 50);
 	border: 2px solid rgb(60, 60, 60);
 	border-radius: 30px;
-	color: rgb(227, 227, 227);
+	
+	color: rgb(214, 214, 214);
 }
 QPushButton:hover {	
 	background-color: rgb(60, 60, 60);
@@ -731,7 +712,7 @@ QPushButton:pressed {
         <string>Sign in</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_login_5">
+      <widget class="QPushButton" name="Sign_Up_Pages">
        <property name="geometry">
         <rect>
          <x>69</x>
@@ -805,7 +786,7 @@ QPushButton:pressed {
         <string>Forgot Password ?</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_10">
+      <widget class="QPushButton" name="IG_Log_In">
        <property name="geometry">
         <rect>
          <x>280</x>
@@ -821,7 +802,7 @@ QPushButton:pressed {
         <string/>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_11">
+      <widget class="QPushButton" name="GG_Log_In">
        <property name="geometry">
         <rect>
          <x>200</x>
@@ -853,7 +834,7 @@ QPushButton:pressed {
         <string>Sign in with</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_12">
+      <widget class="QPushButton" name="TW_Log_In">
        <property name="geometry">
         <rect>
          <x>240</x>
@@ -869,7 +850,7 @@ QPushButton:pressed {
         <string/>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_13">
+      <widget class="QPushButton" name="FB_Log_In">
        <property name="geometry">
         <rect>
          <x>160</x>
@@ -886,19 +867,19 @@ QPushButton:pressed {
        </property>
       </widget>
       <zorder>label_12</zorder>
-      <zorder>lineEdit_user_6</zorder>
+      <zorder>Username</zorder>
       <zorder>label_14</zorder>
       <zorder>label_15</zorder>
-      <zorder>lineEdit_user_7</zorder>
+      <zorder>password</zorder>
       <zorder>label_16</zorder>
-      <zorder>pushButton_login_3</zorder>
+      <zorder>Log_In</zorder>
       <zorder>pushButton_login_4</zorder>
-      <zorder>pushButton_login_5</zorder>
-      <zorder>pushButton_10</zorder>
-      <zorder>pushButton_11</zorder>
+      <zorder>Sign_Up_Pages</zorder>
+      <zorder>IG_Log_In</zorder>
+      <zorder>GG_Log_In</zorder>
       <zorder>label_9</zorder>
-      <zorder>pushButton_12</zorder>
-      <zorder>pushButton_13</zorder>
+      <zorder>TW_Log_In</zorder>
+      <zorder>FB_Log_In</zorder>
      </widget>
     </widget>
     <widget class="QFrame" name="frame_error">
@@ -945,7 +926,7 @@ border-radius: 5px;</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_close_pupup">
+     <widget class="QPushButton" name="close_popup">
       <property name="geometry">
        <rect>
         <x>330</x>
@@ -981,29 +962,141 @@ QPushButton:pressed {
       </property>
      </widget>
     </widget>
-    <widget class="QPushButton" name="pushButton_5">
+    <widget class="QPushButton" name="btn_close">
      <property name="geometry">
       <rect>
        <x>350</x>
        <y>10</y>
-       <width>24</width>
-       <height>24</height>
+       <width>17</width>
+       <height>17</height>
       </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>17</width>
+       <height>17</height>
+      </size>
+     </property>
+     <property name="toolTip">
+      <string>Close</string>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	border-radius: 5px;	
-	
-	background-image: url(:/24x24/images/log-out_2.png);
-	background-position: center;	
-	background-color: transparent;
+	border: none;
+	border-radius: 8px;		
+	background-color: rgb(255, 0, 0);
 }
-</string>
+QPushButton:hover {		
+	background-color: rgba(255, 0, 0, 150);
+}</string>
      </property>
      <property name="text">
       <string/>
      </property>
     </widget>
+    <widget class="QPushButton" name="btn_minimize">
+     <property name="geometry">
+      <rect>
+       <x>323</x>
+       <y>10</y>
+       <width>17</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>17</width>
+       <height>17</height>
+      </size>
+     </property>
+     <property name="toolTip">
+      <string>Minimize</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	border: none;
+	border-radius: 8px;		
+	background-color: rgb(255, 170, 0);
+}
+QPushButton:hover {	
+	background-color: rgba(255, 170, 0, 150);
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_maximize">
+     <property name="geometry">
+      <rect>
+       <x>296</x>
+       <y>10</y>
+       <width>17</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>17</width>
+       <height>17</height>
+      </size>
+     </property>
+     <property name="toolTip">
+      <string>Maximize</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	border: none;
+	border-radius: 8px;	
+	background-color: rgb(85, 255, 127);
+}
+QPushButton:hover {	
+	background-color: rgba(85, 255, 127, 150);
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>521</width>
+      <height>571</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/images/images/Special Healthy Salad Restaurant Menu Instagram Post.png);
+border-top-left-radius: 20px;
+border-bottom-left-radius: 20px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
    </widget>
   </widget>
  </widget>

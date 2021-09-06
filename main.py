@@ -15,9 +15,8 @@ from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFont
 from PyQt5.QtWidgets import *
 
 # GUI FILE
-from ui_splash_screen import Ui_SplashScreen
-from ui_main import Ui_MainWindow
-
+from Function import *
+from ui_Login import *
 # GLOBALS
 counter = 0
 jumper = 10
@@ -26,9 +25,16 @@ jumper = 10
 class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
+        # self.ui = Ui_MainWindow()
+        # self.ui.setupUi(self)
         self.ui = uic.loadUi('Login.ui',self)
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
+
+        self.ui.close_popup.clicked.connect(lambda: self.frame_error.hide())
+
+        # HIDE ERROR
+        self.ui.frame_error.hide()
     ## DEF PROGRESS BAR VALUE
     ########################################################################
     def progressBarValue(self, value, widget, color):
