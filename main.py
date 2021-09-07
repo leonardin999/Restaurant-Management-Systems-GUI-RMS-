@@ -15,14 +15,16 @@ from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFont
 from PyQt5.QtWidgets import *
 
 # GUI FILE
-from Function import *
+from Function_Login import *
+from Function_Menus import *
 from ui_Login import *
+from ui_main_menu import *
 # GLOBALS
 counter = 0
 jumper = 10
 
 ## ==> YOUR APPLICATION WINDOW
-class MainWindow(QMainWindow):
+class Login_Windown(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
         # self.ui = Ui_MainWindow()
@@ -32,53 +34,22 @@ class MainWindow(QMainWindow):
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
 
         self.ui.close_popup.clicked.connect(lambda: self.frame_error.hide())
-
-        # HIDE ERROR
         self.ui.frame_error.hide()
-    ## DEF PROGRESS BAR VALUE
-    ########################################################################
-    def progressBarValue(self, value, widget, color):
-
-        # PROGRESSBAR STYLESHEET BASE
-        styleSheet = """
-        QFrame{
-        	border-radius: 110px;
-        	background-color: qconicalgradient(cx:0.5, cy:0.5, angle:90, stop:{STOP_1} rgba(255, 0, 127, 0), stop:{STOP_2} {COLOR});
-        }
-        """
-
-        # GET PROGRESS BAR VALUE, CONVERT TO FLOAT AND INVERT VALUES
-        # stop works of 1.000 to 0.000
-        progress = (100 - value) / 100.0
-
-        # GET NEW VALUES
-        stop_1 = str(progress - 0.001)
-        stop_2 = str(progress)
-
-        # FIX MAX VALUE
-        if value == 100:
-            stop_1 = "1.000"
-            stop_2 = "1.000"
-
-        # SET VALUES TO NEW STYLESHEET
-        newStylesheet = styleSheet.replace("{STOP_1}", stop_1).replace("{STOP_2}", stop_2).replace("{COLOR}", color)
-
-        # APPLY STYLESHEET WITH NEW VALUES
-        widget.setStyleSheet(newStylesheet)
-
-
-## ==> SPLASHSCREEN WINDOW
+        self.ui.Log_In.clicked.connect(lambda: Menu_Windown().show())
+class Menu_Windown(QMainWindow):
+    def __init__(self):
+        QMainWindow.__init__(self)
+        self.ui = uic.loadUi('main_menu.ui',self)
+        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
+        self.show()
 class SplashScreen(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
         self.ui = uic.loadUi('splash_screen.ui',self)
-        ## ==> SET INITIAL PROGRESS BAR TO (0) ZERO
         self.progressBarValue(0)
-
-        ## ==> REMOVE STANDARD TITLE BAR
-        self.setWindowFlags(QtCore.Qt.FramelessWindowHint) # Remove title bar
-        self.setAttribute(QtCore.Qt.WA_TranslucentBackground) # Set background to transparent
-
+        self.setWindowFlags(QtCore.Qt.FramelessWindowHint) #
+        self.setAttribute(QtCore.Qt.WA_TranslucentBackground) #
         ## ==> APPLY DROP SHADOW EFFECT
         self.shadow = QGraphicsDropShadowEffect(self)
         self.shadow.setBlurRadius(20)
@@ -87,19 +58,12 @@ class SplashScreen(QMainWindow):
         self.shadow.setColor(QColor(0, 0, 0, 120))
         self.ui.circularBg.setGraphicsEffect(self.shadow)
 
-        ## QTIMER ==> START
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.progress)
-        # TIMER IN MILLISECONDS
+
         self.timer.start(10)
-
-        ## SHOW ==> MAIN WINDOW
-        ########################################################################
         self.show()
-        ## ==> END ##
 
-    ## DEF TO LOANDING
-    ########################################################################
     def progress (self):
         global counter
         global jumper
@@ -116,8 +80,6 @@ class SplashScreen(QMainWindow):
             self.ui.labelPercentage.setText(newHtml)
             jumper += 10
 
-        # SET VALUE TO PROGRESS BAR
-        # fix max value error if > than 100
         if value >= 100: value = 1.000
         self.progressBarValue(value)
 
@@ -127,17 +89,11 @@ class SplashScreen(QMainWindow):
             self.timer.stop()
 
             # SHOW MAIN WINDOW
-            self.main = MainWindow()
-            self.main.show()
-
-            # CLOSE SPLASH SCREEN
+            self.login = Login_Windown()
+            self.login.show()
             self.close()
-
-        # INCREASE COUNTER
         counter += 0.5
 
-    ## DEF PROGRESS BAR VALUE
-    ########################################################################
     def progressBarValue(self, value):
 
         # PROGRESSBAR STYLESHEET BASE
