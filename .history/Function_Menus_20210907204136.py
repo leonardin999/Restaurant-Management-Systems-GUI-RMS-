@@ -11,8 +11,9 @@
 ##
 
 from main import *
-class Functions_Menus(Menu_Windown):
-    pass
+
+class Functions_Menus(Menus_Windown):
+
     def uiDefinitions(self):
 
         ## REMOVE ==> STANDARD TITLE BAR

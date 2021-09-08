@@ -44,9 +44,9 @@ background-color: rgb(214, 214, 214);</string>
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>540</y>
+       <y>539</y>
        <width>351</width>
-       <height>20</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="font">
@@ -194,7 +194,7 @@ QLineEdit:focus {
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: rgb(194, 194, 194);</string>
+        <string notr="true">color:rgb(100, 100, 100);</string>
        </property>
        <property name="text">
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Direct from the best service coffee all over the world. &lt;/p&gt;&lt;p&gt;Delivered right to your door step.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -430,9 +430,8 @@ QPushButton:hover {
 	color:rgb(186, 186, 186);
 }
 QPushButton:pressed {	
-	background-color: rgb(250, 230, 0);
-	border: 2px solid rgb(255, 165, 24);	
-	color: rgb(35, 35, 35);
+	background-color: transparent;
+	color: rgb(80, 100, 26);
 }</string>
        </property>
        <property name="text">
@@ -740,9 +739,8 @@ QPushButton:hover {
 	color:rgb(186, 186, 186);
 }
 QPushButton:pressed {	
-	background-color: rgb(250, 230, 0);
-	border: 2px solid rgb(255, 165, 24);	
-	color: rgb(35, 35, 35);
+	background-color:transparent;
+	color:rgb(80, 100, 26);
 }</string>
        </property>
        <property name="text">

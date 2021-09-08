@@ -35,8 +35,6 @@ class Login_Windown(QMainWindow):
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         Functions_Login.uiDefinitions(self)
-        self.ui.close_popup.clicked.connect(lambda: self.frame_error.hide())
-        self.ui.Log_In.clicked.connect(lambda: Menu_Windown().show())
         ## ==> MOVE WINDOW FUNCTIONALITY ##
         ########################################################################
         def moveWindow(event):
@@ -69,7 +67,9 @@ class Login_Windown(QMainWindow):
 
     def keyPressEvent(self, event):
         print('Key: ' + str(event.key()) + ' | Text Press: ' + str(event.text()))
-
+        self.ui.close_popup.clicked.connect(lambda: self.frame_error.hide())
+        self.ui.frame_error.hide()
+        self.ui.Log_In.clicked.connect(lambda: Menu_Windown().show())
 class SplashScreen(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)

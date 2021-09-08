@@ -11,22 +11,33 @@
 ##
 
 from main import *
-class Functions_Menus(Menu_Windown):
-    pass
+## ==> GLOBALS
+GLOBAL_STATE = 0
+GLOBAL_TITLE_BAR = True
+
+## ==> COUT INITIAL MENU
+count = 1
+
+class Functions_Login(Login_Windown):
+   def removeTitleBar(status):
+        global GLOBAL_TITLE_BAR
+        GLOBAL_TITLE_BAR = status
+
     def uiDefinitions(self):
+        ## SHOW ==> DROP SHADOW
+        self.shadow = QGraphicsDropShadowEffect(self)
+        self.shadow.setBlurRadius(17)
+        self.shadow.setXOffset(0)
+        self.shadow.setYOffset(0)
+        self.shadow.setColor(QColor(0, 0, 0, 150))
+        self.ui.frame.setGraphicsEffect(self.shadow)
 
-        ## REMOVE ==> STANDARD TITLE BAR
-        if GLOBAL_TITLE_BAR:
-            self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
-            self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
-        else:
-            self.ui.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-            self.ui.frame_label_top_btns.setContentsMargins(8, 0, 0, 5)
-            self.ui.frame_label_top_btns.setMinimumHeight(42)
-            self.ui.frame_icon_top_bar.hide()
-            self.ui.frame_btns_right.hide()
-            self.ui.frame_size_grip.hide()
-
+        self.shadow1 = QGraphicsDropShadowEffect(self)
+        self.shadow1.setBlurRadius(17)
+        self.shadow1.setXOffset(0)
+        self.shadow1.setYOffset(0)
+        self.shadow1.setColor(QColor(0, 0, 0, 150))
+        self.ui.login_area.setGraphicsEffect(self.shadow1)
 
         ## SHOW ==> DROP SHADOW
         self.shadow = QGraphicsDropShadowEffect(self)
@@ -38,6 +49,4 @@ class Functions_Menus(Menu_Windown):
 
         ### ==> MINIMIZE
         self.ui.btn_minimize.clicked.connect(lambda: self.showMinimized())
-        self.ui.check_camera.setEnabled(False)
-        self.widget_2.hide()
-        ## SHOW ==> CLOSE APPLICATION
+        self.ui.btn_close.clicked.connect(lambda: self.close())

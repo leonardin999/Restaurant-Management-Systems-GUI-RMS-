@@ -68,5 +68,3 @@ class Functions_Login(Login_Windown):
         ### ==> MINIMIZE
         self.ui.btn_minimize.clicked.connect(lambda: self.showMinimized())
         self.ui.btn_close.clicked.connect(lambda: self.close())
-
-        self.ui.frame_error.hide()

@@ -15,12 +15,28 @@ from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFont
 from PyQt5.QtWidgets import *
 
 # GUI FILE
-from app_modules import *
+from Function_Login import *
+#from Function_Menus import *
+from ui_Login import *
+from ui_main_menu import *
 # GLOBALS
 counter = 0
 jumper = 10
 
 ## ==> YOUR APPLICATION WINDOW
+class Login_Windown(QMainWindow):
+    def __init__(self):
+        QMainWindow.__init__(self)
+        # self.ui = Ui_MainWindow()
+        # self.ui.setupUi(self)
+        self.ui = uic.loadUi('Login.ui',self)
+        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
+        Functions_Login.uiDefinitions(self)
+
+        self.ui.close_popup.clicked.connect(lambda: self.frame_error.hide())
+        self.ui.frame_error.hide()
+        self.ui.Log_In.clicked.connect(lambda: Menu_Windown().show())
 class Menu_Windown(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
@@ -28,48 +44,6 @@ class Menu_Windown(QMainWindow):
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         self.show()
-class Login_Windown(QMainWindow):
-    def __init__(self):
-        QMainWindow.__init__(self)
-        self.ui = uic.loadUi('Login.ui',self)
-        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
-        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
-        Functions_Login.uiDefinitions(self)
-        self.ui.close_popup.clicked.connect(lambda: self.frame_error.hide())
-        self.ui.Log_In.clicked.connect(lambda: Menu_Windown().show())
-        ## ==> MOVE WINDOW FUNCTIONALITY ##
-        ########################################################################
-        def moveWindow(event):
-
-        ## moving window ##
-            if event.buttons() == Qt.LeftButton:
-                self.move(self.pos() + event.globalPos() - self.dragPos)
-                self.dragPos = event.globalPos()
-                event.accept()
-
-        self.ui.frame.mouseMoveEvent = moveWindow
-        self.ui.login_area.mouseMoveEvent = moveWindow
-    ## EVENT ==> MOUSE DOUBLE CLICK
-    ########################################################################
-    def eventFilter(self, watched, event):
-        if watched == self.le and event.type() == QtCore.QEvent.MouseButtonDblClick:
-            print("pos: ", event.pos())
-    ## ==> END ##
-
-    ## EVENT ==> MOUSE CLICK
-    ########################################################################
-    def mousePressEvent(self, event):
-        self.dragPos = event.globalPos()
-        if event.buttons() == Qt.LeftButton:
-            print('Mouse click: LEFT CLICK')
-        if event.buttons() == Qt.RightButton:
-            print('Mouse click: RIGHT CLICK')
-        if event.buttons() == Qt.MidButton:
-            print('Mouse click: MIDDLE BUTTON')
-
-    def keyPressEvent(self, event):
-        print('Key: ' + str(event.key()) + ' | Text Press: ' + str(event.text()))
-
 class SplashScreen(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)

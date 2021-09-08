@@ -15,19 +15,15 @@ from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFont
 from PyQt5.QtWidgets import *
 
 # GUI FILE
-from app_modules import *
+from Function_Login import *
+#from Function_Menus import *
+from ui_Login import *
+from ui_main_menu import *
 # GLOBALS
 counter = 0
 jumper = 10
 
 ## ==> YOUR APPLICATION WINDOW
-class Menu_Windown(QMainWindow):
-    def __init__(self):
-        QMainWindow.__init__(self)
-        self.ui = uic.loadUi('main_menu.ui',self)
-        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
-        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
-        self.show()
 class Login_Windown(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
@@ -35,8 +31,6 @@ class Login_Windown(QMainWindow):
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         Functions_Login.uiDefinitions(self)
-        self.ui.close_popup.clicked.connect(lambda: self.frame_error.hide())
-        self.ui.Log_In.clicked.connect(lambda: Menu_Windown().show())
         ## ==> MOVE WINDOW FUNCTIONALITY ##
         ########################################################################
         def moveWindow(event):
@@ -69,7 +63,16 @@ class Login_Windown(QMainWindow):
 
     def keyPressEvent(self, event):
         print('Key: ' + str(event.key()) + ' | Text Press: ' + str(event.text()))
-
+        self.ui.close_popup.clicked.connect(lambda: self.frame_error.hide())
+        self.ui.frame_error.hide()
+        self.ui.Log_In.clicked.connect(lambda: Menu_Windown().show())
+class Menu_Windown(QMainWindow):
+    def __init__(self):
+        QMainWindow.__init__(self)
+        self.ui = uic.loadUi('main_menu.ui',self)
+        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
+        self.show()
 class SplashScreen(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)

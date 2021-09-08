@@ -10,7 +10,7 @@
 ## https://doc.qt.io/qtforpython/licenses.html
 ##
 
-from main import *
+from main import Login_Windown
 
 class Functions_Login(Login_Windown):
 
@@ -23,12 +23,12 @@ class Functions_Login(Login_Windown):
             self.label_error.setText(message)
 
         # CHECK USER
-        if not self.ui.label_error.text():
+        if not self.lineEdit_user.text():
             self.textUser = " User Empyt. "
-            self.ui.label_error.setStyleSheet(self.styleLineEditError)
+            self.lineEdit_user.setStyleSheet(self.styleLineEditError)
         else:
             self.textUser = ""
-            self.ui.label_error.setStyleSheet(self.styleLineEditOk)
+            self.lineEdit_user.setStyleSheet(self.styleLineEditOk)
 
         # CHECK PASSWORD
         if not self.lineEdit_password.text():
@@ -38,16 +38,16 @@ class Functions_Login(Login_Windown):
             self.textPassword = ""
             self.lineEdit_password.setStyleSheet(self.styleLineEditOk)
         # CHECK FIELDS
-        if self.textUser + self.textPassword != '':
-            text = self.textUser + self.textPassword
-            showMessage(text)
-            self.frame_error.setStyleSheet(self.stylePopupError)
-        else:
-            text = " Login OK. "
-            if self.checkBox_save_user.isChecked():
-                text = text + " | Saver user: OK "
-            showMessage(text)
-            self.frame_error.setStyleSheet(self.stylePopupOk)
+    if self.textUser + self.textPassword != '':
+        text = self.textUser + self.textPassword
+        showMessage(text)
+        self.frame_error.setStyleSheet(self.stylePopupError)
+    else:
+        text = " Login OK. "
+        if self.checkBox_save_user.isChecked():
+            text = text + " | Saver user: OK "
+        showMessage(text)
+        self.frame_error.setStyleSheet(self.stylePopupOk)
 
     def uiDefinitions(self):
         ## SHOW ==> DROP SHADOW
@@ -68,5 +68,3 @@ class Functions_Login(Login_Windown):
         ### ==> MINIMIZE
         self.ui.btn_minimize.clicked.connect(lambda: self.showMinimized())
         self.ui.btn_close.clicked.connect(lambda: self.close())
-
-        self.ui.frame_error.hide()

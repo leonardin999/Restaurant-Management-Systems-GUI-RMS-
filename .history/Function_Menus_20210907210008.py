@@ -10,7 +10,7 @@
 ## https://doc.qt.io/qtforpython/licenses.html
 ##
 
-from main import *
+from main import Menu_Windown
 class Functions_Menus(Menu_Windown):
     pass
     def uiDefinitions(self):
